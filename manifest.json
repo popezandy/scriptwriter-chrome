@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Scriptwriter Chrome",
+  "version": "0.1.0",
+  "description": "Turn Google Docs into a screenplay-aware editor.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/document/*"
+  ],
+  "background": {
+    "service_worker": "dist/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/document/*"
+      ],
+      "js": [
+        "dist/content/index.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Scriptwriter Chrome"
+  }
+}

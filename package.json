@@ -1,0 +1,14 @@
+{
+  "name": "scriptwriter-chrome",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
